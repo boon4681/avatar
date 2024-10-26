@@ -10,6 +10,6 @@ export const GET: RequestHandler = async ({ url, params }) => {
   }
   const result = (Marble as any).render({ text: params.text?.replace(/\.svg$/, '') });
   return new Response(result.html, {
-    headers: { 'Content-Type': 'image/svg+xml' },
+    headers: { 'Content-Type': 'image/svg+xml', 'Cache-Control': 'public, max-age=3600' },
   });
 };
