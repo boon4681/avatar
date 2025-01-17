@@ -19,6 +19,9 @@ export const GET: RequestHandler = async ({ url, params }) => {
         gradient: await generateGradient(params.text?.replace(/\.svg$/, '') ?? "")
     });
     return new Response(result.html, {
-        headers: { 'Content-Type': 'image/svg+xml', 'Cache-Control': 'public, max-age=3600' },
+        headers: {
+            'Content-Type': 'image/svg+xml',
+            'Cache-Control': 'public, max-age=604800, immutable',
+        },
     });
 }

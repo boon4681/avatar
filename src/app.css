@@ -1,5 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
     color: white;
     background-color: #0F0F0F;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.api {
+    header {
+        @apply border-b border-neutral-600 px-4 py-1 text-sm;
+    }
+    .request {
+        h2,td {
+            @apply text-neutral-400 text-sm font-semibold;
+        }
+        table {
+            @apply w-full;
+        }
+        th {
+            @apply font-semibold text-neutral-400 border-b;
+        }
+        tbody tr:first-child td{
+            @apply pt-2;
+        }
+        th,
+        td {
+            @apply px-4;
+        }
+        td kbd {
+            @apply bg-neutral-700 rounded py-0.5 px-1;
+        }
+        @apply p-4;
+    }
+    @apply border border-neutral-600 rounded-lg;
 }
